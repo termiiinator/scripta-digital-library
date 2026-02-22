@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-change-this-key'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com', 'rinataghayev.ru', '.rinataghayev.ru', 'www.rinataghayev.ru', 'scripta-digital-library-production.up.railway.app', '.up.railway.app']
+ALLOWED_HOSTS = ['.onrender.com', 'rinataghayev.ru', '.rinataghayev.ru', 'www.rinataghayev.ru', 'scripta-digital-library-production.up.railway.app', '.up.railway.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -148,3 +148,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://rinataghayev.ru",
     "https://www.rinataghayev.ru",
 ]
+
+# push
+# nog
+# clear 

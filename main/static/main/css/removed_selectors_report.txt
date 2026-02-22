@@ -1,0 +1,17 @@
+Удалённые селекторы из main/static/main/css/styles.css (22.02.2026):
+
+- .search-box
+- .search-input-wrapper
+- .search-input-wrapper input
+- .search-input-wrapper input:focus
+- .search-btn
+- .search-btn svg
+- .search-btn:hover svg
+- .search-box input, .filter-group input[type="text"]
+- .book-rating
+- .book-rating .stars
+
+Сомнительные (оставлены, но помечены в CSS):
+- .reader-modal.active (возможно используется динамически через JS)
+
+Если потребуется полный отчёт по всем частям файла — сообщите!
