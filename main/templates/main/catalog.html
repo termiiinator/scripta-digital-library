@@ -1,0 +1,101 @@
+{% extends "main/base.html" %}
+{% load static %}
+  
+{% block title %}О нас - Scripta{% endblock %}
+
+{% block content %}
+    <!-- Catalog Page -->
+    <section class="catalog-page">
+        <div class="container">
+            <div class="catalog-page-header">
+                <h1 id="catalogTitle" data-key="catalog">Каталог</h1>
+                <p class="catalog-page-subtitle" id="catalogSubtitle"></p>
+            </div>
+
+            <div class="catalog-layout">
+                <!-- Filters -->
+                <aside class="filters">
+                    <form method="get" id="filtersForm">
+                        <div class="filter-group">
+                            <input type="text" name="q" placeholder="Поиск по названию" value="{{ request.GET.q|default:'' }}" style="width:100%;padding:8px;margin-bottom:12px;">
+                        </div>
+                        <div class="filter-group">
+                            <h4 class="filter-title" data-key="categoryFilter">Категория</h4>
+                            <ul class="filter-list" id="categoryFilters">
+                                <li>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="category" value="recommended" {% if 'recommended' in selected_categories %}checked{% endif %}>
+                                        <span data-key="recommended">Рекомендуем</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="category" value="new" {% if 'new' in selected_categories %}checked{% endif %}>
+                                        <span data-key="new">Новинки</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="category" value="best" {% if 'best' in selected_categories %}checked{% endif %}>
+                                        <span data-key="best">Лучшие</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="filter-group">
+                            <h4 class="filter-title" data-key="genres">Жанры</h4>
+                            <ul class="filter-list" id="genreFilters">
+                                {% for genre in genres %}
+                                <li>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" name="genre" value="{{ genre }}" {% if genre in selected_genres %}checked{% endif %}>
+                                        {{ genre }}
+                                    </label>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div style="display: flex; justify-content: center; margin-top: 12px;">
+                            <button type="submit" class="filter-apply-btn" id="applyFilters" data-key="applyFilters">Применить</button>
+                        </div>
+                    </form>
+                </aside>
+
+                <!-- Books Grid -->
+                <div class="books-grid" id="allBooks">
+                    {% for book in books %}
+                            <a class="book-card" href="{% url 'book_detail' book.id %}">
+                                {% if book.status != 'regular' %}
+                                    <div class="book-status-badge">
+                                        {% if book.status == 'new' %}
+                                            <span class="status-badge status-new">Новинка</span>
+                                        {% elif book.status == 'recommended' %}
+                                            <span class="status-badge status-recommended">Рекомендуем</span>
+                                        {% elif book.status == 'best' %}
+                                            <span class="status-badge status-best">Лучшее</span>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                                <div class="book-cover">
+                                    {% if book.cover_image %}
+                                        <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                                    {% else %}
+                                        <img src="{% static 'main/img/covers/placeholder.jpg' %}" alt="Нет обложки">
+                                    {% endif %}
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">{{ book.title }}</div>
+                                    <div class="book-author">{{ book.author }}</div>
+                                    <div class="book-genre">{{ book.genre }}</div>
+                                </div>
+                            </a>
+                    {% empty %}
+                        <p>Нет книг в базе данных.</p>
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

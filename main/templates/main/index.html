@@ -1,0 +1,122 @@
+{% extends "main/base.html" %}
+  
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-key="heroTitle">Твоя личная библиотека в кармане</h1>
+                    <p class="hero-subtitle" data-key="heroSubtitle">5 000-dən çox kitab bir saytda</p>
+                    <a href="/catalog/" class="cta-btn" id="ctaBtn" data-key="startReading">Начать читать бесплатно</a>
+                </div>
+                <div class="hero-visual">
+                    <img src="{% static 'main/img/kniga.png' %}" alt="Книга" class="hero-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+<section class="books-section">
+    <div class="container">
+
+        <!-- Новинки -->
+        <div class="category-section">
+            <div class="section-header">
+                <h2>Новинки</h2>
+                <a href="{% url 'catalog' %}?category=new">Показать все новинки</a>
+            </div>
+
+            <div class="books-grid" id="newBooks">
+                {% for book in books_new %}
+                    <a class="book-card" href="{% url 'book_detail' book.id %}">
+                        <div class="book-cover">
+                            {% if book.cover_image %}
+                                <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                            {% else %}
+                                <img src="{% static 'main/img/covers/placeholder.jpg' %}" alt="Нет обложки">
+                            {% endif %}
+                        </div>
+
+                        <div class="book-info">
+                            <div class="book-title">{{ book.title }}</div>
+                            <div class="book-author">{{ book.author }}</div>
+                            <div class="book-genre">{{ book.genre }}</div>
+                        </div>
+                    </a>
+                {% empty %}
+                    <p>Нет новинок.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Рекомендуем -->
+        <div class="category-section">
+            <div class="section-header">
+                <h2>Рекомендуем</h2>
+                <a href="{% url 'catalog' %}?category=recommended">Показать все рекомендуемые</a>
+            </div>
+            <div class="books-grid" id="recommendedBooks">
+                {% for book in books_recommended %}
+                    <a class="book-card" href="{% url 'book_detail' book.id %}">
+                        <div class="book-cover">
+                            {% if book.cover_image %}
+                                <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                            {% else %}
+                                <img src="{% static 'main/img/covers/placeholder.jpg' %}" alt="Нет обложки">
+                            {% endif %}
+                        </div>
+                        <div class="book-info">
+                            <div class="book-title">{{ book.title }}</div>
+                            <div class="book-author">{{ book.author }}</div>
+                            <div class="book-genre">{{ book.genre }}</div>
+                        </div>
+                    </a>
+                {% empty %}
+                    <p>Нет рекомендуемых книг.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Лучшие -->
+        <div class="category-section">
+            <div class="section-header">
+                <h2>Лучшие</h2>
+                <a href="{% url 'catalog' %}?category=best">Показать все лучшие</a>
+            </div>
+
+            <div class="books-grid" id="bestBooks">
+                {% for book in books_best %}
+                    <a class="book-card" href="{% url 'book_detail' book.id %}">
+                        <div class="book-cover">
+                            {% if book.cover_image %}
+                                <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                            {% else %}
+                                <img src="{% static 'main/img/covers/placeholder.jpg' %}" alt="Нет обложки">
+                            {% endif %}
+                        </div>
+
+                        <div class="book-info">
+                            <div class="book-title">{{ book.title }}</div>
+                            <div class="book-author">{{ book.author }}</div>
+                            <div class="book-genre">{{ book.genre }}</div>
+                        </div>
+                    </a>
+                {% empty %}
+                    <p>Нет лучших книг.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+
+    
+   

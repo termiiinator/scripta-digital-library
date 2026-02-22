@@ -1,0 +1,76 @@
+{% extends "main/base.html" %}
+  
+{% block title %}О нас - Scripta{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-bg">
+            <div class="about-orb about-orb--1"></div>
+            <div class="about-orb about-orb--2"></div>
+            <div class="about-orb about-orb--3"></div>
+        </div>
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="about-hero-title" data-key="privacyTitle">Политика конфиденциальности</h1>
+                <p class="about-hero-subtitle" data-key="privacySubtitle">Как мы защищаем ваши данные</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-advantages">
+                <div class="about-advantage">
+                    <div class="about-advantage-marker"></div>
+                    <div>
+                        <h3 data-key="privacyCollect">Какие данные мы собираем</h3>
+                        <p data-key="privacyCollectText">Мы собираем минимальный объём данных, необходимый для работы сервиса: язык интерфейса, тема оформления и список избранных книг. Эти данные хранятся локально в вашем браузере (localStorage) и не передаются на серверы третьих лиц.</p>
+                    </div>
+                </div>
+
+                <div class="about-advantage">
+                    <div class="about-advantage-marker"></div>
+                    <div>
+                        <h3 data-key="privacyUse">Как мы используем данные</h3>
+                        <p data-key="privacyUseText">Собранные данные используются исключительно для персонализации вашего опыта: отображение интерфейса на выбранном языке, сохранение темы оформления и списка избранных книг между сессиями.</p>
+                    </div>
+                </div>
+
+                <div class="about-advantage">
+                    <div class="about-advantage-marker"></div>
+                    <div>
+                        <h3 data-key="privacyCookies">Файлы cookie</h3>
+                        <p data-key="privacyCookiesText">Наш сайт не использует файлы cookie для отслеживания. Все пользовательские предпочтения сохраняются через localStorage вашего браузера.</p>
+                    </div>
+                </div>
+
+                <div class="about-advantage">
+                    <div class="about-advantage-marker"></div>
+                    <div>
+                        <h3 data-key="privacyThirdParty">Третьи стороны</h3>
+                        <p data-key="privacyThirdPartyText">Мы не передаём, не продаём и не предоставляем ваши персональные данные третьим лицам. Взаимодействие с API-сервером происходит только для загрузки каталога книг.</p>
+                    </div>
+                </div>
+
+                <div class="about-advantage">
+                    <div class="about-advantage-marker"></div>
+                    <div>
+                        <h3 data-key="privacySecurity">Безопасность</h3>
+                        <p data-key="privacySecurityText">Мы принимаем разумные меры для защиты данных. Все соединения с сервером осуществляются по защищённому протоколу. Ваши данные хранятся только на вашем устройстве.</p>
+                    </div>
+                </div>
+
+                <div class="about-advantage">
+                    <div class="about-advantage-marker"></div>
+                    <div>
+                        <h3 data-key="privacyRights">Ваши права</h3>
+                        <p data-key="privacyRightsText">Вы можете в любой момент удалить все сохранённые данные, очистив localStorage в настройках браузера. При возникновении вопросов свяжитесь с нами через страницу «О нас».</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
