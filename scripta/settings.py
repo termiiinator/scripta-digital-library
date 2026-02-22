@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-change-this-key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['.onrender.com', 'rinataghayev.ru', '.rinataghayev.ru', 'www.rinataghayev.ru', 'scripta-digital-library-production.up.railway.app', '.up.railway.app']
@@ -140,3 +141,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://scripta-digital-library-production.up.railway.app",
+    "https://*.up.railway.app",
+    "https://rinataghayev.ru",
+    "https://www.rinataghayev.ru",
+]
