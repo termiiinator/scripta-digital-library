@@ -270,9 +270,7 @@ updateLanguageDisplay(savedLang);
 document.querySelectorAll('.lang-option').forEach(btn => {
     btn.addEventListener('click', function() {
         const lang = btn.getAttribute('data-lang');
-        applyLang(lang); // только applyLang, больше ничего не нужно
-        // updateLanguageDisplay(lang); // УДАЛИТЬ эту строку!
-        // localStorage.setItem('lang', lang); // УДАЛИТЬ эту строку!
+        applyLang(lang);
     });
 });
 

@@ -58,10 +58,7 @@ function renderStarRating(rating, container) {
     }
 }
 
-console.log('book.js loaded');
-
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('book.js DOMContentLoaded');
 
     // Рендер звёзд рейтинга
     var starContainer = document.getElementById('star-rating');

@@ -73,7 +73,6 @@
         </div>
         <div class="catalog-content">
             <div class="catalog-category">
-                <ul id="genresList"></ul>
                                 <ul id="genresList">
                                     {% for genre in genres %}
                                         <li><a href="{% url 'catalog' %}?genre={{ genre }}">{{ genre }}</a></li>
@@ -150,7 +149,6 @@
     {% block extra_js %}{% endblock %}
     {% if request.resolver_match.url_name == 'book_detail' %}
     <script src="{% static 'main/js/book.js' %}"></script>
-    <script>console.log('book.js script tag inserted');</script>
     {% endif %}
 </body>
 </html>
