@@ -21,7 +21,7 @@
                     <h1 class="book-title">{{ book.title }}</h1>
                     <p class="book-author">{{ book.author }}</p>
                     <div class="book-rating">
-                            <div class="rating-label">Рейтинг редакции</div>
+                            <div class="rating-label" data-key="ratingLabel">Рейтинг редакции</div>
                             <div class="star-rating" data-rating="{{ book.admin_rating|floatformat:'1' }}">
                                 <span class="rating-icon">⭐</span>
                                 <span class="rating-value">{{ book.rating|floatformat:1 }}</span>
@@ -30,20 +30,20 @@
                         </div>
                     <div class="book-meta">
                         <div class="meta-item">
-                            <strong>Жанр</strong>: <span>{{ book.genre }}</span>
+                            <strong data-key="genre">Жанр</strong>: <span>{{ book.genre }}</span>
                         </div>
                         <div class="meta-item">
-                            <strong>Год</strong>: <span>{{ book.published_date }}</span>
+                            <strong data-key="year">Год</strong>: <span>{{ book.published_date }}</span>
                         </div>
                         <div class="meta-item">
-                            <strong>Язык</strong>: <span>{{ book.language }}</span>
+                            <strong data-key="language">Язык</strong>: <span>{{ book.language }}</span>
                         </div>
                         <div class="meta-item">
-                            <strong>Страниц</strong>: <span>{{ book.pages }}</span>
+                            <strong data-key="pages">Страниц</strong>: <span>{{ book.pages }}</span>
                         </div>
                     </div>
                     <div class="book-description">
-                        <h3>Описание</h3>
+                        <h3 data-key="description">Описание</h3>
                         <p>{{ book.description }}</p>
                     </div>
                     <div class="book-actions">
@@ -56,17 +56,17 @@
                             <span data-key="readOnline" data-lang-ru>Читать онлайн</span>
                             <span data-key="readOnline" data-lang-az style="display:none">Onlayn oxu</span>
                         </button>
-                        <a href="{{ book.pdf_file.url }}" id="downloadLink" class="secondary-btn" download>Скачать</a>
+                        <a href="{{ book.pdf_file.url }}" id="downloadLink" class="secondary-btn" download data-key="download">Скачать</a>
                         {% else %}
                         <button class="primary-btn" disabled style="opacity:0.6;cursor:not-allowed">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M3 4h14v12H3z" stroke="currentColor" stroke-width="2" />
                                 <path d="M6 8h8M6 11h8M6 14h5" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <span data-key="readOnline" data-lang-ru>Нет PDF</span>
-                            <span data-key="readOnline" data-lang-az style="display:none">PDF yoxdur</span>
+                            <span data-key="noPdf" data-lang-ru>Нет PDF</span>
+                            <span data-key="noPdf" data-lang-az style="display:none">PDF yoxdur</span>
                         </button>
-                        <a href="#" class="secondary-btn" style="pointer-events:none;opacity:0.6">Скачать</a>
+                        <a href="#" class="secondary-btn" style="pointer-events:none;opacity:0.6" data-key="download">Скачать</a>
                         {% endif %}
                     </div>
                     </div>

@@ -17,7 +17,7 @@
                 <aside class="filters">
                     <form method="get" id="filtersForm">
                         <div class="filter-group">
-                            <input type="text" name="q" placeholder="Поиск по названию" value="{{ request.GET.q|default:'' }}" style="width:100%;padding:8px;margin-bottom:12px;">
+                            <input type="text" name="q" placeholder="Поиск по названию" data-key-placeholder="searchByTitle" value="{{ request.GET.q|default:'' }}" style="width:100%;padding:8px;margin-bottom:12px;">
                         </div>
                         <div class="filter-group">
                             <h4 class="filter-title" data-key="categoryFilter">Категория</h4>
@@ -68,11 +68,11 @@
                                 {% if book.status != 'regular' %}
                                     <div class="book-status-badge">
                                         {% if book.status == 'new' %}
-                                            <span class="status-badge status-new">Новинка</span>
+                                            <span class="status-badge status-new" data-key="statusNew">Новинка</span>
                                         {% elif book.status == 'recommended' %}
-                                            <span class="status-badge status-recommended">Рекомендуем</span>
+                                            <span class="status-badge status-recommended" data-key="statusRecommended">Рекомендуем</span>
                                         {% elif book.status == 'best' %}
-                                            <span class="status-badge status-best">Лучшее</span>
+                                            <span class="status-badge status-best" data-key="statusBest">Лучшее</span>
                                         {% endif %}
                                     </div>
                                 {% endif %}
@@ -90,7 +90,7 @@
                                 </div>
                             </a>
                     {% empty %}
-                        <p>Нет книг в базе данных.</p>
+                        <p data-key="noBooksInDb">Нет книг в базе данных.</p>
                     {% endfor %}
                 </div>
                 </div>

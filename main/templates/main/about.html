@@ -137,7 +137,7 @@
                             {{ field }}
                         </div>
                     {% endfor %}
-                    <button type="submit" class="cta-btn about-submit-btn">Отправить</button>
+                    <button type="submit" class="cta-btn about-submit-btn" data-key="aboutFormSend">Отправить</button>
                 </form>
                 <div class="about-contact-info">
                     <p data-key="aboutContactDirect">Или напишите нам напрямую:</p>
@@ -149,7 +149,7 @@
 {% endblock %}
 
 <p style="text-align:center; margin-top:2em;">
-    <a href="{% url 'feedback' %}">Обратная связь</a>
+    <a href="{% url 'feedback' %}" data-key="feedback">Обратная связь</a>
 </p>
 
    

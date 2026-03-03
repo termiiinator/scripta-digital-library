@@ -28,8 +28,8 @@
         <!-- Новинки -->
         <div class="category-section">
             <div class="section-header">
-                <h2>Новинки</h2>
-                <a href="{% url 'catalog' %}?category=new">Показать все новинки</a>
+                <h2 data-key="new">Новинки</h2>
+                <a href="{% url 'catalog' %}?category=new" data-key="viewAllNew">Показать все новинки</a>
             </div>
 
             <div class="books-grid" id="newBooks">
@@ -50,7 +50,7 @@
                         </div>
                     </a>
                 {% empty %}
-                    <p>Нет новинок.</p>
+                    <p data-key="noNew">Нет новинок.</p>
                 {% endfor %}
             </div>
         </div>
@@ -58,8 +58,8 @@
         <!-- Рекомендуем -->
         <div class="category-section">
             <div class="section-header">
-                <h2>Рекомендуем</h2>
-                <a href="{% url 'catalog' %}?category=recommended">Показать все рекомендуемые</a>
+                <h2 data-key="recommended">Рекомендуем</h2>
+                <a href="{% url 'catalog' %}?category=recommended" data-key="viewAllRecommended">Показать все рекомендуемые</a>
             </div>
             <div class="books-grid" id="recommendedBooks">
                 {% for book in books_recommended %}
@@ -78,7 +78,7 @@
                         </div>
                     </a>
                 {% empty %}
-                    <p>Нет рекомендуемых книг.</p>
+                    <p data-key="noRecommended">Нет рекомендуемых книг.</p>
                 {% endfor %}
             </div>
         </div>
@@ -86,8 +86,8 @@
         <!-- Лучшие -->
         <div class="category-section">
             <div class="section-header">
-                <h2>Лучшие</h2>
-                <a href="{% url 'catalog' %}?category=best">Показать все лучшие</a>
+                <h2 data-key="best">Лучшие</h2>
+                <a href="{% url 'catalog' %}?category=best" data-key="viewAllBest">Показать все лучшие</a>
             </div>
 
             <div class="books-grid" id="bestBooks">
@@ -108,7 +108,7 @@
                         </div>
                     </a>
                 {% empty %}
-                    <p>Нет лучших книг.</p>
+                    <p data-key="noBest">Нет лучших книг.</p>
                 {% endfor %}
             </div>
         </div>

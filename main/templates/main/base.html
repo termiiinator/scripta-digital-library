@@ -19,14 +19,14 @@
 
                 <nav class="nav">
                     <a href="/" class="nav-link" data-key="home">Главная</a> 
-                    <a href="{% url 'catalog' %}" class="nav-link" data-key="All">Коллекции</a>
+                    <a href="{% url 'catalog' %}" class="nav-link" data-key="collections">Коллекции</a>
                     <a href="/about" class="nav-link" data-key="about">О нас</a>
                 </nav>
 
                 <div class="header-actions">
                     <form action="/catalog/" method="get" class="search-box">
                         <div class="search-input-wrapper">
-                            <input type="text" name="q" placeholder="Поиск книг..." value="{{ request.GET.q|default:'' }}">
+                            <input type="text" name="q" placeholder="Поиск книг..." data-key-placeholder="search" value="{{ request.GET.q|default:'' }}">
                             <button type="submit" class="search-btn">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
@@ -77,7 +77,7 @@
                                     {% for genre in genres %}
                                         <li><a href="{% url 'catalog' %}?genre={{ genre }}">{{ genre }}</a></li>
                                     {% empty %}
-                                        <li>Жанры не найдены</li>
+                                        <li data-key="noGenres">Жанры не найдены</li>
                                     {% endfor %}
                                 </ul>
             </div>
@@ -109,8 +109,8 @@
                     </a>
                     <p data-key="footerText">Ваша онлайн библиотека</p>
                     <div class="footer-socials">
-                        <a href="https://t.me/rinat_web_dev" class="social-link" aria-label="Telegram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 16.87L8.86 19.96C9.17 19.96 9.31 19.82 9.48 19.65L11.06 18.13L14.66 20.72C15.32 21.09 15.78 20.9 15.96 20.12L18.42 8.18C18.68 7.2 18.1 6.82 17.46 7.08L4.44 12.04C3.5 12.41 3.52 12.93 4.28 13.15L7.81 14.25L15.12 9.56C15.46 9.34 15.76 9.46 15.52 9.68L9.04 16.87Z" /></svg>
+                        <a href="https://www.linkedin.com/in/rinat-aghayev/" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12zM5.5 9.75h2.88V19H5.5V9.75zM10.44 9.75h2.76v1.26h.04c.38-.73 1.32-1.5 2.72-1.5 2.9 0 3.44 1.91 3.44 4.39V19h-2.88v-4.5c0-1.07-.02-2.45-1.49-2.45-1.49 0-1.72 1.16-1.72 2.37V19h-2.87V9.75z" /></svg>
                         </a>
                         <a href="https://instagram.com/rinat5x30" class="social-link" aria-label="Instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" /></svg>
