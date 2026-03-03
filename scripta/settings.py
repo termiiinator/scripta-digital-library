@@ -10,7 +10,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# SECURITY WARNING: keep the secret key secret in production!
+# SECURITY WARNING: keep the secret key secret in production! 
 SECRET_KEY = 'django-insecure-change-this-key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
