@@ -142,3 +142,4 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.up.railway.app",
     "https://rinataghayev.ru",
     "https://www.rinataghayev.ru",
+]
