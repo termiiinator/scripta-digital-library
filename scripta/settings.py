@@ -148,8 +148,3 @@ CSRF_TRUSTED_ORIGINS = [
     "https://rinataghayev.ru",
     "https://www.rinataghayev.ru",
 ]
-
-# push
-# nog
-# clear 
-# youtube video
